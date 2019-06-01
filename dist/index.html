@@ -7,23 +7,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>Text-2-speech</title>
 </head>
 
 <body class="bg-secondary text-white">
     <div class="container text-center">
         <img src="image/speaking.png" alt="logo">
-        <h3>Text 2 Speech</h3>
+        <h3>Text-2-Speech</h3>
         <div class="row">
-            <col-md-6 class="mx-auto">
+            <div class="col-md-6 mx-auto">
                 <form>
                     <div class="form-group">
-                        <textarea name="" id="text-input"  class="form-control form-control-lg"></textarea>
+                        <textarea name="" id="text-input"  class="form-control form-control-lg"
+                        placeholder="Type text here"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for=""><span class="badge badge-primary float-right" id="rate-value"></span><input type="range" name="" id="" class="custom-range"></label></div>
+                        <label for="rate">Rate</label>
+                        <div id="rate-value" class="badge badge-info float-right">1</div>
+                        <input type="range" id="rate" class="custom-range" min="0.5" max="2" value="1" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="pitch">Pitch</label>
+                        <div id="pitch-value" class="badge badge-info float-right">1</div>
+                        <input type="range" id="pitch" class="custom-range" min="0.5" max="2" value="1" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <select name="" id="voice-select" class="form-control form-control-lg"></select>
+                    </div>
+                    <button class="btn btn-light btn-lg btn-block">Speak It</button>
                 </form>
-            </col-md-6>
+            </div>
         </div>
     </div>
 
@@ -36,7 +51,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
