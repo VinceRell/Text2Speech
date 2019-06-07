@@ -9,6 +9,7 @@ const rate = document.querySelector('#rate');
 const rateValue = document.querySelector('#rate-value');
 const pitch = document.querySelector('#pitch');
 const pitchValue = document.querySelector('#pitch-value');
+const body = document.querySelector('body');
 
 // voices array
 let voices = [];
@@ -36,17 +37,26 @@ if(synth.onvoiceschanged !== undefined) {
 
 // speech functionality
 const speech = () => {
+
     // check if speaking
     if(synth.speaking) {
         console.error('Already speaking...');
         return;
-    } else if (textInput.value !== '') {
+    } 
+    
+    if (textInput.value !== '') {
+        // background animation
+        body.style.background = '#141414 url(image/soundwave.gif)';
+        body.style.backgroundRepeat = 'repeat-x';
+        body.style.backgroundSize = '100% 100%';
+
         // get speech text
         const speechText = new SpeechSynthesisUtterance(textInput.value);
     
         // speech end
         speechText.onend = e => {
-            console.log('done speaking...')
+            console.log('done speaking...');
+            body.style.background = '#141414';
         }
 
         // speech error

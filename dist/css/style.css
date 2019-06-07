@@ -1,4 +1,8 @@
-h3{
+body {
+  background: #141414;
+}
+
+h3 {
   font-family: 'Fugaz One', cursive;
   margin: 10px auto;
 }
